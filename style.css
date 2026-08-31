@@ -1,0 +1,1668 @@
+/* ==========================================
+   CONFIGURACIÓN
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: #71384e;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #ffd6e7,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            #ffc9df,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5f9,
+            #ffdce9
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   FONDO ROMÁNTICO
+========================================== */
+
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 255, 255, 0.85) 0,
+            rgba(255, 255, 255, 0) 25%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 215, 232, 0.8) 0,
+            rgba(255, 215, 232, 0) 28%
+        ),
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(255, 225, 238, 0.8) 0,
+            rgba(255, 225, 238, 0) 30%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(255, 255, 255, 0.8) 0,
+            rgba(255, 255, 255, 0) 25%
+        );
+
+    animation: luzFondo 10s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    opacity: 0.35;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    animation: moverEstrellas 25s linear infinite;
+}
+
+
+@keyframes luzFondo {
+
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
+}
+
+
+@keyframes moverEstrellas {
+
+    from {
+        background-position:
+            0 0;
+    }
+
+    to {
+        background-position:
+            45px 45px;
+    }
+}
+
+
+/* ==========================================
+   ELEMENTOS FLOTANTES
+========================================== */
+
+.fondo {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+
+.flotante {
+    position: absolute;
+
+    display: block;
+
+    opacity: 0.35;
+
+    font-size: 30px;
+
+    filter:
+        drop-shadow(
+            0 4px 8px
+            rgba(190, 70, 120, 0.12)
+        );
+
+    animation:
+        flotar 7s ease-in-out infinite;
+}
+
+
+/* Posiciones */
+
+.f1 {
+    top: 8%;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.f2 {
+    top: 18%;
+    right: 12%;
+    animation-delay: 1s;
+}
+
+.f3 {
+    top: 42%;
+    left: 4%;
+    animation-delay: 2s;
+}
+
+.f4 {
+    top: 72%;
+    right: 6%;
+    animation-delay: 3s;
+}
+
+.f5 {
+    bottom: 12%;
+    left: 12%;
+    animation-delay: 1.5s;
+}
+
+.f6 {
+    top: 60%;
+    right: 17%;
+    animation-delay: 2.5s;
+}
+
+.f7 {
+    bottom: 20%;
+    right: 30%;
+    animation-delay: 4s;
+}
+
+.f8 {
+    top: 30%;
+    right: 3%;
+    animation-delay: 1.8s;
+}
+
+.f9 {
+    bottom: 5%;
+    left: 45%;
+    animation-delay: 3.5s;
+}
+
+.f10 {
+    top: 5%;
+    left: 47%;
+    animation-delay: 4.5s;
+}
+
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(5deg);
+    }
+}
+
+/* ==========================================
+   CONTENEDOR
+========================================== */
+
+.contenedor {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* ==========================================
+   PANTALLAS
+========================================== */
+
+.pantalla {
+
+    display: none !important;
+
+    width: min(680px, 100%);
+
+    padding: 45px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border:
+        3px solid #f1aec8;
+
+    border-radius: 38px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(150, 60, 100, 0.18);
+
+    animation:
+        aparecer 0.7s ease;
+}
+
+.pantalla.activa {
+
+    display: block !important;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ==========================================
+   TEXTOS
+========================================== */
+
+h1 {
+
+    margin: 15px 0;
+
+    color: #d64f83;
+
+    font-size: 42px;
+
+    line-height: 1.15;
+}
+
+h2 {
+
+    color: #d64f83;
+
+    font-size: 31px;
+
+    line-height: 1.3;
+}
+
+p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.subtitulo {
+
+    font-size: 21px;
+
+    color: #a55372;
+}
+
+
+/* ==========================================
+   INICIO
+========================================== */
+
+.ositosInicio {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 auto 15px;
+
+    animation:
+        aparecerOsitos 0.9s ease;
+}
+
+
+.ositosInicio img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    filter:
+        drop-shadow(
+            0 10px 15px
+            rgba(150, 60, 100, 0.15)
+        );
+}
+
+
+@keyframes aparecerOsitos {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+}
+@keyframes ositos {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+.adorno {
+
+    color: #e47ba3;
+
+    letter-spacing: 5px;
+
+    margin: 20px 0;
+}
+
+.separador {
+
+    color: #e47ba3;
+
+    font-size: 23px;
+
+    letter-spacing: 8px;
+
+    margin: 25px 0;
+}
+
+.mensajeInicio {
+
+    background: #fff2f7;
+
+    border:
+        2px solid #f3c1d4;
+
+    border-radius: 25px;
+
+    padding: 15px 25px;
+
+    margin: 25px 0;
+}
+
+.mensajeInicio p {
+
+    margin: 10px 0;
+}
+
+.decoracionAbajo {
+
+    margin-top: 30px;
+
+    font-size: 28px;
+
+    letter-spacing: 10px;
+}
+
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.botonPrincipal {
+
+    border: none;
+
+    padding: 16px 38px;
+
+    margin-top: 18px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed79a4,
+            #d64d82
+        );
+
+    box-shadow:
+        0 9px 25px
+        rgba(210, 70, 120, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.botonPrincipal:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(210, 70, 120, 0.35);
+}
+
+.botonPrincipal:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* ==========================================
+   PREGUNTAS
+========================================== */
+
+.parteActual {
+
+    display: inline-block;
+
+    padding: 7px 18px;
+
+    border-radius: 30px;
+
+    background: #ffe1ec;
+
+    color: #d65383;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.progreso {
+
+    width: 100%;
+
+    height: 9px;
+
+    background: #fbe0ea;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+}
+
+#barraProgreso {
+
+    height: 100%;
+
+    width: 16.6%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ef83aa,
+            #d84f82
+        );
+
+    border-radius: 20px;
+
+    transition:
+        width 0.5s ease;
+}
+
+.encabezadoPregunta {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    color: #bc5479;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+#vidas {
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+
+.tarjetaPregunta {
+
+    padding: 35px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5f9,
+            #ffedf4
+        );
+
+    border:
+        2px solid #f2bfd2;
+
+    border-radius: 30px;
+
+    box-shadow:
+        inset 0 0 30px
+        rgba(220, 80, 130, 0.05);
+}
+
+.osoPregunta {
+
+    width: 100%;
+
+    max-width: 440px;
+
+    margin: 0 auto 15px;
+
+}
+
+
+.osoPregunta img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    filter:
+        drop-shadow(
+            0 8px 14px
+            rgba(150, 60, 100, 0.12)
+        );
+
+    animation:
+        aparecerPregunta 0.7s ease;
+}
+
+
+@keyframes aparecerPregunta {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+.pequenoAdorno {
+
+    color: #e578a0;
+
+    font-size: 25px;
+}
+
+#textoPregunta {
+
+    color: #733c51;
+
+    font-size: 27px;
+
+    line-height: 1.45;
+
+    margin: 10px 0 15px;
+}
+
+.instruccion {
+
+    font-size: 16px;
+
+    color: #a15a76;
+}
+
+input {
+
+    width: 100%;
+
+    padding: 17px 20px;
+
+    border:
+        2px solid #edb0c8;
+
+    border-radius: 18px;
+
+    background: white;
+
+    color: #71384e;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    outline: none;
+
+    transition:
+        border 0.2s,
+        box-shadow 0.2s;
+}
+
+input:focus {
+
+    border-color: #d84f82;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(216, 79, 130, 0.10);
+}
+
+#mensajePregunta {
+
+    min-height: 28px;
+
+    margin-top: 18px;
+
+    color: #d65383;
+
+    font-weight: bold;
+}
+
+.textoAbajo {
+
+    font-size: 15px;
+
+    color: #ad6b84;
+
+    margin-top: 25px;
+}
+
+
+/* ==========================================
+   ESPERA
+========================================== */
+
+.relojDecoracion {
+
+    font-size: 70px;
+
+    margin-bottom: 10px;
+}
+
+.contadorCaja {
+
+    padding: 25px;
+
+    margin: 25px 0;
+
+    border-radius: 25px;
+
+    background: #fff1f6;
+
+    border:
+        2px solid #f2bfd2;
+}
+
+.contadorTitulo {
+
+    display: block;
+
+    color: #b96782;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+#contador {
+
+    color: #d54d82;
+
+    font-size: 55px;
+
+    font-weight: bold;
+
+    font-variant-numeric:
+        tabular-nums;
+}
+
+.textoEsperaAbajo {
+
+    color: #a35c75;
+
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   REGALOS
+========================================== */
+
+.regaloCaja {
+
+    position: relative;
+
+    min-height: 160px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 10px;
+}
+
+.cajaRegalo {
+
+    font-size: 100px;
+
+    animation:
+        regaloFlota 2s ease-in-out infinite;
+}
+
+.lazo {
+
+    position: absolute;
+
+    top: 0;
+
+    font-size: 45px;
+
+    z-index: 2;
+}
+
+@keyframes regaloFlota {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(3deg);
+    }
+}
+
+.insigniaParte {
+
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    border-radius: 30px;
+
+    background: #ffe0eb;
+
+    color: #d34d80;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.insigniaParte.segunda {
+
+    background: #fbd9e7;
+
+    color: #c94678;
+}
+
+.mensajeRegalo {
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    border:
+        2px dashed #e8a0bc;
+
+    background: #fff3f7;
+}
+
+.ositoRegalo {
+
+    font-size: 50px;
+
+    margin-bottom: 5px;
+}
+
+.mensajeRegalo p {
+
+    margin: 8px 0 15px;
+}
+
+.mensajeRegalo strong {
+
+    color: #c64a78;
+
+    font-size: 19px;
+}
+
+.pequenoTexto {
+
+    color: #a65b76;
+
+    font-size: 15px;
+}
+
+.corazonRegalo {
+
+    font-size: 105px;
+
+    animation:
+        latido 1.5s ease-in-out infinite;
+}
+
+.brillos {
+
+    position: absolute;
+
+    font-size: 20px;
+
+    top: 25px;
+
+    letter-spacing: 30px;
+}
+
+@keyframes latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* ==========================================
+   FINAL
+========================================== */
+
+.pantallaFinal {
+
+    width: min(800px, 100%);
+
+    padding: 30px;
+}
+
+.decoracionFinalSuperior {
+
+    font-size: 25px;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 20px;
+}
+
+.cajaFinal {
+
+    padding: 45px 30px;
+
+    border-radius: 35px;
+
+    border:
+        3px solid #efb0c7;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #ffe1ec
+        );
+
+    box-shadow:
+        inset 0 0 40px
+        rgba(210, 70, 120, 0.07);
+}
+
+.corazonesFinal {
+
+    font-size: 27px;
+
+    letter-spacing: 8px;
+}
+
+.ositosFinal {
+
+    font-size: 45px;
+
+    margin: 15px 0;
+}
+
+.cajaFinal h1 {
+
+    font-size: 46px;
+}
+
+.lineaFinal {
+
+    color: #df7098;
+
+    letter-spacing: 8px;
+
+    margin: 20px 0;
+}
+
+.cajaFinal p {
+
+    font-size: 22px;
+
+    color: #80445b;
+}
+
+.mensajeCorazon {
+
+    margin-top: 28px;
+
+    color: #9d5873;
+}
+
+.corazonFinal {
+
+    width: 135px;
+
+    height: 135px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ff779f,
+            #df4779
+        );
+
+    color: white;
+
+    font-size: 72px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 35px
+        rgba(210, 60, 110, 0.35);
+
+    animation:
+        latido 1.5s infinite;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.corazonFinal:hover {
+
+    transform: scale(1.12);
+}
+
+.tocarCorazon {
+
+    font-size: 14px;
+
+    color: #ad6983;
+}
+
+
+/* ==========================================
+   CARTA
+========================================== */
+
+.pantallaCarta {
+
+    width: min(720px, 100%);
+}
+
+.sobre {
+
+    font-size: 70px;
+
+    margin-bottom: 10px;
+}
+
+.carta {
+
+    padding: 40px;
+
+    border-radius: 28px;
+
+    background:
+        #fffafd;
+
+    border:
+        2px solid #efb5ca;
+
+    box-shadow:
+        0 15px 45px
+        rgba(150, 60, 100, 0.12);
+}
+
+.adornoCarta {
+
+    font-size: 25px;
+
+    letter-spacing: 8px;
+
+    color: #dc7098;
+}
+
+.carta h2 {
+
+    font-size: 34px;
+
+    margin: 20px 0 10px;
+}
+
+.lineaCarta {
+
+    color: #df739a;
+
+    letter-spacing: 7px;
+
+    margin: 15px 0 25px;
+}
+
+.textoCarta {
+
+    text-align: left;
+
+    color: #633e4e;
+}
+
+.textoCarta p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+.firma {
+
+    text-align: right;
+
+    color: #c84d7b;
+
+    font-weight: bold;
+
+    margin-top: 35px;
+}
+
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    .contenedor {
+        padding: 15px;
+    }
+
+    .pantalla {
+        padding: 30px 20px;
+
+        border-radius: 28px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .encabezadoPregunta {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    #textoPregunta {
+        font-size: 23px;
+    }
+
+    #contador {
+        font-size: 42px;
+    }
+
+    .carta {
+        padding: 25px 20px;
+    }
+
+}
+/* ==========================================
+   ILUSTRACIÓN REGALO 1
+========================================== */
+
+.regaloCaja {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.regaloCaja img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    filter:
+        drop-shadow(
+            0 10px 18px
+            rgba(150, 60, 100, 0.15)
+        );
+
+    animation:
+        aparecerRegalo 0.8s ease;
+}
+
+
+@keyframes aparecerRegalo {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.94);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+/* ==========================================
+   ILUSTRACIÓN FINAL
+========================================== */
+
+.ositosFinal {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.ositosFinal img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    filter:
+        drop-shadow(
+            0 10px 18px
+            rgba(150, 60, 100, 0.15)
+        );
+
+    animation:
+        aparecerFinal 1s ease;
+
+}
+
+
+@keyframes aparecerFinal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.94);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+/* ==========================================
+   CORAZÓN FINAL
+========================================== */
+
+.corazonFinal {
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.corazonFinal:hover {
+
+    transform:
+        scale(1.12);
+
+}
+
+
+.corazonFinal:active {
+
+    transform:
+        scale(0.95);
+
+}
+
+
+.corazonFinal.corazonAbierto {
+
+    animation:
+        latidoFinal 1s ease forwards;
+
+}
+
+
+@keyframes latidoFinal {
+
+    0% {
+
+        transform:
+            scale(1);
+
+    }
+
+    20% {
+
+        transform:
+            scale(1.25);
+
+    }
+
+    40% {
+
+        transform:
+            scale(1);
+
+    }
+
+    60% {
+
+        transform:
+            scale(1.35);
+
+    }
+
+    100% {
+
+        transform:
+            scale(8);
+
+        opacity: 0;
+
+    }
+
+}
+/* ==========================================
+   CARTA FINAL
+========================================== */
+
+.pantallaCarta {
+
+    padding:
+        30px
+        20px
+        40px;
+
+    overflow-y: auto;
+
+}
+
+
+.decoracionCartaSuperior,
+.decoracionCartaInferior {
+
+    text-align: center;
+
+    font-size: 18px;
+
+    opacity: 0.8;
+
+    margin: 8px 0;
+
+}
+
+
+.sobre {
+
+    font-size: 55px;
+
+    text-align: center;
+
+    margin-bottom: 5px;
+
+    animation:
+        aparecerSobre 0.8s ease;
+
+}
+
+
+.carta {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding:
+        35px
+        40px
+        30px;
+
+    box-sizing: border-box;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 250, 252, 0.97);
+
+    box-shadow:
+        0 15px 40px
+        rgba(130, 60, 90, 0.15);
+
+    border:
+        1px solid
+        rgba(180, 100, 130, 0.18);
+
+    position: relative;
+
+    animation:
+        aparecerCarta 1s ease;
+
+}
+
+
+.adornoCarta {
+
+    text-align: center;
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.carta h2 {
+
+    text-align: center;
+
+    margin:
+        5px 0 15px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 30px;
+
+    font-weight: normal;
+
+}
+
+
+.lineaCarta {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    opacity: 0.7;
+
+}
+
+
+.textoCarta {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    text-align: left;
+
+}
+
+
+.textoCarta p {
+
+    margin:
+        0 0 20px;
+
+}
+
+
+.textoCarta .firma {
+
+    text-align: right;
+
+    margin-top: 30px;
+
+    font-style: italic;
+
+}
+
+
+.adornoCartaInferior {
+
+    text-align: center;
+
+    font-size: 20px;
+
+    margin-top: 25px;
+
+    opacity: 0.8;
+
+}
+
+
+@keyframes aparecerSobre {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-15px)
+            scale(0.85);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes aparecerCarta {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}

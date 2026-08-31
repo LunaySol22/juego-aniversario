@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Un pequeño juego para vos 💕</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================
+         FONDO DECORATIVO
+    ====================================== -->
+
+    <div class="fondo">
+
+        <span class="flotante f1">💕</span>
+        <span class="flotante f2">♡</span>
+        <span class="flotante f3">🌷</span>
+        <span class="flotante f4">🌸</span>
+        <span class="flotante f5">💗</span>
+        <span class="flotante f6">♡</span>
+        <span class="flotante f7">🌷</span>
+        <span class="flotante f8">💕</span>
+        <span class="flotante f9">🌷</span>
+        <span class="flotante f10">💖</span>
+
+    </div>
+
+
+    <!-- =====================================
+         CONTENEDOR PRINCIPAL
+    ====================================== -->
+
+    <main class="contenedor">
+
+
+        <!-- =================================
+             INICIO
+        ================================== -->
+
+        <section id="pantallaInicio"
+                 class="pantalla activa">
+
+    <div class="ositosInicio">
+    <img
+        src="imagenes/inicio.png"
+        alt="Neo y Harly"
+    >
+</div>
+
+            <div class="adorno">
+                ✦ ───── ♡ ───── ✦
+            </div>
+
+            <h1>
+                Bienvenida a tu juego
+                de aniversario!!! <br>
+                
+            </h1>
+
+            <p class="subtitulo">
+                Hay algo especial esperándote al final... 
+            </p>
+
+            <div class="mensajeInicio">
+
+            
+
+                <p>
+                    Vas a tener que responder
+                    algunas preguntas sobre nosotros
+                    para descubrir qué hay al final.
+                </p>
+
+                <p>
+                    Pero cuidado...
+                    <br>
+                    no va a ser tan fácil.
+                </p>
+
+            </div>
+
+            <button id="botonComenzar"
+                    class="botonPrincipal">
+
+                Comenzar
+                <span>💗</span>
+
+            </button>
+
+            <div class="decoracionAbajo">
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             PREGUNTA
+        ================================== -->
+
+        <section id="pantallaPregunta"
+                 class="pantalla">
+
+            <div class="parteActual">
+                PARTE <span id="numeroParte">1</span>/3
+            </div>
+
+            <div class="progreso">
+
+                <div id="barraProgreso"></div>
+
+            </div>
+
+            <div class="encabezadoPregunta">
+
+                <span id="numeroPregunta">
+                    Pregunta 1/6
+                </span>
+
+                <div id="vidas">
+                    ❤️ ❤️ ❤️
+                </div>
+
+            </div>
+
+
+            <div class="tarjetaPregunta">
+
+               <div class="osoPregunta">
+
+    <img
+        src="imagenes/pregunta.png"
+        alt="Neo y Harly"
+    >
+
+</div>
+
+                <div class="pequenoAdorno">
+                    ♡
+                </div>
+
+                <h2 id="textoPregunta">
+                    Pregunta
+                </h2>
+
+                <p class="instruccion">
+                    Escribí tu respuesta
+                </p>
+
+                <input
+                    type="text"
+                    id="respuesta"
+                    placeholder="Tu respuesta..."
+                    autocomplete="off"
+                >
+
+                <button id="botonResponder"
+                        class="botonPrincipal">
+
+                    Responder 💌
+
+                </button>
+
+                <p id="mensajePregunta"></p>
+
+            </div>
+
+            <p class="textoAbajo">
+                Pensalo bien, bonita... 💕
+            </p>
+
+        </section>
+
+
+        <!-- =================================
+             ESPERA
+        ================================== -->
+
+        <section id="pantallaEspera"
+                 class="pantalla">
+
+            <div class="relojDecoracion">
+                ⏳
+            </div>
+
+            <div class="adorno">
+                ✦ ───── ♡ ───── ✦
+            </div>
+
+            <h2>
+                Un poquito de paciencia...
+            </h2>
+
+            <p id="textoEspera">
+                La próxima sorpresa estará disponible
+                cuando el tiempo llegue a cero.
+            </p>
+
+            <div class="contadorCaja">
+
+                <span class="contadorTitulo">
+                    TIEMPO RESTANTE
+                </span>
+
+                <div id="contador">
+                    03:00:00
+                </div>
+
+            </div>
+
+
+            <p class="textoEsperaAbajo">
+                Podés cerrar la página.
+                <br>
+                El tiempo seguirá corriendo. 💗
+            </p>
+
+        </section>
+
+
+        <!-- =================================
+             REGALO 1
+        ================================== -->
+
+        <section id="pantallaRegalo1"
+                 class="pantalla recompensa">
+
+           <div class="regaloCaja regaloUno">
+
+    <img
+        src="imagenes/regalo1.png"
+        alt="Neo y Harly celebrando el primer regalo"
+    >
+
+</div>
+
+            <div class="adorno">
+                ✦ ───── ♡ ───── ✦
+            </div>
+
+            <h2>
+                ¡Felicitaciones! 💕
+            </h2>
+
+            <div class="insigniaParte">
+                PARTE 1/3
+            </div>
+
+            <div class="mensajeRegalo">
+
+
+                <p>
+                    Completaste la primera parte
+                    del juego de aniversario.
+                </p>
+
+                <strong>
+                    Habla con Neo y él te dará tu regalo.
+                </strong>
+
+            </div>
+
+            <p class="pequenoTexto">
+                Hay más sorpresas esperándote... 💗
+            </p>
+
+            <button id="botonContinuarRegalo1"
+                    class="botonPrincipal">
+
+                Continuar 💕
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================
+             REGALO 2
+        ================================== -->
+
+        <section id="pantallaRegalo2"
+                 class="pantalla recompensa">
+
+           <div class="regaloCaja regaloDos">
+
+    <img
+        src="imagenes/regalo2.png"
+        alt="Neo y Harly celebrando el segundo regalo"
+    >
+
+</div>
+
+            <div class="adorno">
+                ✦ ───── ♡ ───── ✦
+            </div>
+
+            <h2>
+                ¡Lo lograste! 🌸
+            </h2>
+
+            <div class="insigniaParte segunda">
+                PARTE 2/3
+            </div>
+
+            <div class="mensajeRegalo">
+
+                <p>
+                    Felicitaciones por completar
+                    la segunda parte.
+                </p>
+
+                <strong>
+                    Habla con Neo y él te dará tu regalo.
+                </strong>
+
+            </div>
+
+            <p class="pequenoTexto">
+                Ya falta muy poquito... 💗
+            </p>
+
+            <button id="botonContinuarRegalo2"
+                    class="botonPrincipal">
+
+                Continuar 💕
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================
+             FINAL
+        ================================== -->
+
+        <section id="pantallaFinal"
+                 class="pantalla pantallaFinal">
+
+          
+            <div class="cajaFinal">
+
+
+              <div class="ositosFinal">
+
+    <img
+        src="imagenes/final.png"
+        alt="Neo y Harly juntos"
+    >
+
+</div>
+
+                <h1>
+                    ¡Felicitaciones,<br>
+                    Bonita!
+                </h1>
+
+                <div class="lineaFinal">
+                    ♡ ───────── ♡
+                </div>
+
+                <p>
+                    Completaste todo el juego
+                    de aniversario.
+                </p>
+
+            </div>
+
+            <p class="mensajeCorazon">
+                Pero todavía queda una última cosa... 💌
+            </p>
+
+            <button id="corazonFinal"
+                    class="corazonFinal">
+
+                ❤️
+
+            </button>
+
+            <p class="tocarCorazon">
+                Tocá el corazón
+            </p>
+
+        </section>
+
+
+     <!-- =================================
+     CARTA
+================================== -->
+
+<section id="pantallaCarta"
+         class="pantalla pantallaCarta">
+
+    <div class="decoracionCartaSuperior">
+        ✦ ───── ♡ ───── ✦
+    </div>
+
+    <div class="carta">
+
+
+        <h2>
+            Para Harly ❤️
+        </h2>
+
+        <div class="lineaCarta">
+            ♡ ───────── ♡
+        </div>
+
+        <div class="textoCarta">
+
+            <!-- =================================
+                 ACÁ IRÁ TU CARTA REAL
+            ================================== -->
+
+
+            <p>
+                Llegaste hasta el final...
+                y ahora sí puedo darte
+                mi última sorpresa. ❤️
+            </p>
+
+            <p>
+                Quiero que sepas lo importante que fuiste para mí, lo que sos y lo que serás para el resto de mi vida. Quiero agradecerte por cada momento estos años, y decirte gracias por estar siempre para mí, gracias por representar esa persona hermosa que amo con locura. También me gustaría pedirte perdón por no estar contigo físicamente en este momento, y decirte que ese será el último regalo, una promesa. La promesa de que este es el último año que pasamos separados nuestro aniversario.
+            </p>
+
+            <p>
+                Este pequeño juego
+                es solamente una forma de
+                recordarte lo importante que
+                sos para mí.
+            </p>
+
+            <p>
+                Te amo muchísimo BONITAS. 💗
+            </p>
+
+            <p class="firma">
+                Con todo mi amor,<br>
+                Neo ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="decoracionCartaInferior">
+        ✦ ───── ♡ ───── ✦
+    </div>
+
+</section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
