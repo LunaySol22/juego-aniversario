@@ -262,7 +262,7 @@ function cargarPregunta() {
     mensajePregunta.textContent = "";
 
     imagenPregunta.src =
-    "imagenes/pregunta.png";
+    "Imagenes/pregunta.png";
 
     actualizarVidas();
 
@@ -358,7 +358,7 @@ function responder() {
             "💖 ¡Respuesta correcta! 💖";
 
             imagenPregunta.src =
-    "imagenes/correcta.png";
+    "Imagenes/correcta.png";
 
         preguntaActual++;
 
@@ -486,12 +486,12 @@ function responder() {
     actualizarVidas();
 
     imagenPregunta.src =
-    "imagenes/incorrecta.png";
+    "Imagenes/incorrecta.png";
     
 setTimeout(function() {
 
     imagenPregunta.src =
-        "imagenes/pregunta.png";
+        "Imagenes/pregunta.png";
 
 }, 1500);
 
