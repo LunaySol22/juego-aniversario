@@ -44,7 +44,7 @@ const preguntas = [
 const VIDAS_MAXIMAS = 3;
 
 const TIEMPO_ESPERA =
-    3 * 0 * 0 * 1000;
+    10 * 1000;
 
 
 // ==========================================
